@@ -2,811 +2,237 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="light dark" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Privian Care Management LLC | RN-Led Concierge Senior Support (Minneapolis–St. Paul Metro)</title>
-  <meta name="description" content="Privian Care Management LLC provides RN-led senior support, monthly wellness check-ins, concierge services, and personalized care coordination for aging adults in Minnesota. Families stay informed and confident with consistent oversight, safety assessments, appointment scheduling, medication and care coordination, and regular family updates." />
+  <title>Privian Care Management | RN-Led Senior Care Services in Minnesota</title>
+  <meta name="description" content="RN-guided senior care management, concierge support, and monthly wellness check-ins for Minnesota families. Compassionate, trustworthy support for seniors at home." />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Privian Care Management LLC" />
-  <meta property="og:description" content="RN-led concierge senior support in Minnesota — wellness check-ins, care coordination, and practical in-home help for aging adults." />
+  <!-- FAVICONS -->
+  <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Privian Care" />
+  <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Privian Care Management | RN-Led Senior Care Services" />
+  <meta property="og:description" content="Supporting seniors with independence, dignity, and peace of mind." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="INSERT-YOUR-LOGO-OR-HERO-IMAGE" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Styles moved out -->
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Google tag -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JW9D61Q7LM"></script>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JW9D61Q7LM');
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            lavender: '#C8A2C8',
+            lavenderDark: '#6E4F7A',
+            graysoft: '#F5F5F5',
+            graphite: '#333333',
+            rnblue: '#4C8DBE',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Privian Care Management",
+    "description": "RN-led senior care management and concierge services for Minnesota families.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "MN",
+      "addressCountry": "US"
+    },
+    "telephone": "612-402-1675",
+    "email": "sheilaprokuski@gmail.com",
+    "url": "YOUR_SITE_URL"
+  }
   </script>
 </head>
 
-<body>
-  <!-- TOPBAR -->
-  <div class="topbar">
-    <div class="wrap">
-      <div class="nav" role="navigation" aria-label="Primary">
-        <a class="brand" href="#top" aria-label="Privian Care Management LLC home">
-          <div class="mark" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-              <path d="M13 1.5C7.1 1.5 2.3 6.3 2.3 12.2c0 5.9 4.8 10.7 10.7 10.7 5.9 0 10.7-4.8 10.7-10.7C23.7 6.3 18.9 1.5 13 1.5Z" stroke="rgba(230,210,164,0.9)" stroke-width="1.2"/>
-              <path d="M8.2 16.8V7.7h5.2c2 0 3.3 1.1 3.3 2.8 0 1.1-.5 1.9-1.3 2.3.9.4 1.6 1.3 1.6 2.6 0 1.9-1.4 3.4-3.7 3.4H8.2Zm2.1-5.4h2.7c1 0 1.7-.5 1.7-1.3 0-.8-.6-1.3-1.6-1.3h-2.8v2.6Zm0 3.6h3c1.2 0 1.9-.6 1.9-1.5 0-.9-.7-1.5-1.9-1.5h-3v3Z" fill="rgba(245,238,227,0.95)"/>
-            </svg>
-          </div>
+<body class="font-sans text-graphite bg-white">
 
-          <div class="brand-title">
-            <strong>Privian Care</strong>
-            <span>Care Management LLC</span>
-          </div>
-        </a>
+<!-- HEADER -->
+<header class="w-full bg-white shadow-sm fixed top-0 left-0 z-40">
+  <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+    <div class="flex items-center gap-3">
 
-        <nav class="navlinks" aria-label="Site">
-          <a href="#services">Services</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#how">How it works</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#about">About</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Contact</a>
-        </nav>
+      <!-- Updated Logo Path -->
+      <img src="/assets/logos/logo.png"
+           alt="Privian Care Management Logo"
+           class="h-10 w-auto" />
 
-        <div class="nav-cta">
-          <a class="btn btn-ghost" href="tel:+16124021675">Call</a>
-          <a class="btn btn-primary" href="#contact">Request a consultation</a>
-        </div>
-
-        <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </button>
-      </div>
-
-      <div class="drawer" id="drawer">
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#how">How it works</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#about">About</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-        <div class="drawer-cta">
-          <a class="btn btn-ghost" href="tel:+16124021675">Call</a>
-          <a class="btn btn-primary" href="#contact">Request a consultation</a>
-        </div>
-      </div>
+      <span class="text-xl font-semibold text-lavenderDark">Privian Care Management</span>
     </div>
+
+    <a href="#contact" class="text-lavenderDark font-medium hover:underline">Contact</a>
   </div>
+</header>
 
-  <div class="topbar">
-    <div class="wrap">
-      <div class="nav" role="navigation" aria-label="Primary">
-        <a class="brand" href="#top" aria-label="Privian Care Management LLC home">
-          <div class="mark" aria-hidden="true">
-            <!-- Simple logo placeholder (monogram crest) -->
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M13 1.5C7.1 1.5 2.3 6.3 2.3 12.2c0 5.9 4.8 10.7 10.7 10.7 5.9 0 10.7-4.8 10.7-10.7C23.7 6.3 18.9 1.5 13 1.5Z" stroke="rgba(230,210,164,0.9)" stroke-width="1.2"/>
-              <path d="M8.2 16.8V7.7h5.2c2 0 3.3 1.1 3.3 2.8 0 1.1-.5 1.9-1.3 2.3.9.4 1.6 1.3 1.6 2.6 0 1.9-1.4 3.4-3.7 3.4H8.2Zm2.1-5.4h2.7c1 0 1.7-.5 1.7-1.3 0-.8-.6-1.3-1.6-1.3h-2.8v2.6Zm0 3.6h3c1.2 0 1.9-.6 1.9-1.5 0-.9-.7-1.5-1.9-1.5h-3v3Z" fill="rgba(245,238,227,0.95)"/>
-            </svg>
-          </div>
-          <div class="brand-title">
-            <strong>Privian Care</strong>
-            <span>Care Management LLC</span>
-          </div>
-        </a>
+<!-- HERO -->
+<section class="pt-28 pb-16 bg-graysoft">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center px-6">
 
-        <nav class="navlinks" aria-label="Site">
-          <a href="#services">Services</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#how">How it works</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#about">About</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
-        <div class="nav-cta">
-          <a class="btn btn-ghost" href="tel:+16124021675" aria-label="Call Privian Care">Call</a>
-          <a class="btn btn-primary" href="#contact" aria-label="Schedule a consultation">Request a consultation</a>
-        </div>
-
-        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </button>
-      </div>
-
-      <div class="drawer" id="drawer" role="region" aria-label="Mobile navigation">
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#how">How it works</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#about">About</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-        <div class="drawer-cta">
-          <a class="btn btn-ghost" href="tel:+16124021675">Call</a>
-          <a class="btn btn-primary" href="#contact">Request a consultation</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <main id="top" class="wrap" aria-label="Content">
-    <!-- HERO -->
-    <section class="hero" aria-label="Hero">
-      <div class="hero-grid">
-        <div>
-          <div class="kicker"><span class="dot" aria-hidden="true"></span> Minneapolis–St. Paul Metro • Private-pay • RN-led</div>
-          <h1>Luxury-level care coordination and practical help — delivered personally.</h1>
-          <p>
-            <strong>Privian Care Management LLC</strong> provides RN-led senior support, monthly wellness check-ins, concierge services, and personalized care coordination for aging adults in Minnesota.
-            Families stay informed and confident through consistent oversight, safety assessments, appointment scheduling, medication and care coordination, and regular family updates.
-          </p>
-          <p>
-            Senior concierge services include errands, household support, organization, and personal assistance to help seniors stay independent at home.
-            <strong>Your peace of mind is our priority.</strong>
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">
-              Request a consultation
-              <span aria-hidden="true">→</span>
-            </a>
-            <a class="btn btn-ghost" href="#services">Explore services</a>
-          </div>
-
-          <div class="trust" aria-label="Highlights">
-            <div class="pill">
-              <div class="icon" aria-hidden="true">🩺</div>
-              <div>
-                <b>RN-led oversight</b>
-                <span>Professional assessment, coordination, and clear next steps.</span>
-              </div>
-            </div>
-            <div class="pill">
-              <div class="icon" aria-hidden="true">🕯️</div>
-              <div>
-                <b>Concierge support</b>
-                <span>Practical help that keeps daily life smooth and dignified.</span>
-              </div>
-            </div>
-            <div class="pill">
-              <div class="icon" aria-hidden="true">📬</div>
-              <div>
-                <b>Family updates</b>
-                <span>Consistent communication so nobody feels "in the dark."</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="frame-stack" aria-label="Image frames">
-          <div class="frame">
-            <div class="frame-inner">
-              <img
-                src="https://images.pexels.com/photos/339620/pexels-photo-339620.jpeg"
-                alt="Warm, calming home setting representing senior support"
-                loading="lazy"
-              />
-            </div>
-            <div class="caption">
-              <strong>Care that feels personal</strong>
-              <span>Oversight • Coordination • Peace of mind</span>
-            </div>
-          </div>
-
-          <div class="frame">
-            <div class="frame-inner" style="aspect-ratio: 16/10;">
-              <img
-                src="https://images.pexels.com/photos/4063789/pexels-photo-4063789.jpeg"
-                alt="Lifestyle image representing dignity and independence"
-                loading="lazy"
-              />
-            </div>
-            <div class="caption">
-              <strong>Independence, supported</strong>
-              <span>In-home check-ins • Safety reviews • Logistics handled</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" aria-label="Services">
-      <div class="section-head">
-        <h2>Services designed for real life (and real schedules)</h2>
-        <p>
-          Privian is a one-woman practice at the start — which means you get direct, attentive service.
-          The offerings below are built for families who want professional oversight <em>and</em> practical help in the same place.
-        </p>
-      </div>
-
-      <div class="grid" role="list">
-        <!-- RN Care Management -->
-        <article class="card service" role="listitem">
-          <div class="media">
-            <img src="https://images.pexels.com/photos/6646773/pexels-photo-6646773.jpeg" alt="RN-led care management concept" loading="lazy" />
-            <div class="chip">RN-led</div>
-          </div>
-          <div class="body">
-            <div>
-              <h3>RN Care Management</h3>
-              <p>Clinical-level coordination with a human touch — focused on safety, clarity, and continuity.</p>
-            </div>
-
-            <ul class="bullets">
-              <li>Monthly wellness check-ins and ongoing oversight</li>
-              <li>Medication overview, tracking, and coordination</li>
-              <li>Appointment scheduling and follow-through</li>
-              <li>Care coordination and advocacy with providers</li>
-              <li>Home safety assessments and fall-risk awareness</li>
-              <li>Family communication and regular updates</li>
-            </ul>
-
-            <details>
-              <summary>
-                What families typically ask for
-                <span class="caret" aria-hidden="true">▾</span>
-              </summary>
-              <ul class="bullets">
-                <li>"Can you attend the appointment and give us a summary afterwards?"</li>
-                <li>"We need a clearer medication list and routine."</li>
-                <li>"Someone should just check in consistently and tell us what’s changing."</li>
-                <li>"We want a safety review before something happens."</li>
-              </ul>
-            </details>
-
-            <p class="note"><strong>Starting point:</strong> $150/hr or $350–$900/month membership options.</p>
-          </div>
-        </article>
-
-        <!-- Concierge -->
-        <article class="card service" role="listitem">
-          <div class="media">
-            <img src="https://images.pexels.com/photos/3791664/pexels-photo-3791664.jpeg" alt="Concierge support concept" loading="lazy" />
-            <div class="chip">Concierge</div>
-          </div>
-          <div class="body">
-            <div>
-              <h3>Senior Concierge Support</h3>
-              <p>Practical help that keeps the household moving — respectfully, privately, and reliably.</p>
-            </div>
-
-            <ul class="bullets">
-              <li>Grocery shopping, errands, and transportation logistics</li>
-              <li>Light cleaning and laundry support</li>
-              <li>Meal prep and pantry/fridge organization</li>
-              <li>Companionship and social engagement check-ins</li>
-              <li>Organization and paperwork support</li>
-              <li>Tech help (phone, iPad, apps) and setup</li>
-            </ul>
-
-            <details>
-              <summary>
-                Concierge add-ons (popular)
-                <span class="caret" aria-hidden="true">▾</span>
-              </summary>
-              <ul class="bullets">
-                <li>Weekly home reset: tidy + laundry + meal prep</li>
-                <li>Admin day: bills, forms, appointments, calls</li>
-                <li>Seasonal safety: winter readiness + home walk-through</li>
-                <li>Tech comfort: password/phone basics + repeating routines</li>
-              </ul>
-            </details>
-
-            <p class="note"><strong>Rates:</strong> $40–$55/hr • <strong>Packages:</strong> $300–$1,600/month.</p>
-          </div>
-        </article>
-
-        <!-- Monthly Check-in -->
-        <article class="card service" role="listitem">
-          <div class="media">
-            <img src="https://picsum.photos/seed/priviancare-checkin/1200/850" alt="Monthly wellness check-in concept" loading="lazy" />
-            <div class="chip">Monthly check-in</div>
-          </div>
-          <div class="body">
-            <div>
-              <h3>Monthly Check-In Visit</h3>
-              <p>A structured RN visit for families who want consistent oversight without a full membership.</p>
-            </div>
-
-            <ul class="bullets">
-              <li>Health & mood observations</li>
-              <li>Home safety review</li>
-              <li>Medication overview</li>
-              <li>Cognitive & mobility screening</li>
-              <li>Social engagement check</li>
-              <li>Written family update/report</li>
-            </ul>
-
-            <details>
-              <summary>
-                What you get in writing
-                <span class="caret" aria-hidden="true">▾</span>
-              </summary>
-              <ul class="bullets">
-                <li>A plain-language summary of observations</li>
-                <li>Any safety concerns + suggested improvements</li>
-                <li>Next-step recommendations (appointments, follow-ups, home supports)</li>
-                <li>Questions to ask at upcoming visits</li>
-              </ul>
-            </details>
-
-            <p class="note"><strong>Flat rate:</strong> $150 per check-in.</p>
-          </div>
-        </article>
-      </div>
-
-      <p class="note" style="margin-top: 14px;">
-        <strong>Note:</strong> Privian is private pay and focuses on coordination, oversight, and everyday support.
-        This demo site intentionally avoids implying medical diagnosis or home health services.
+    <div>
+      <h1 class="text-4xl md:text-5xl font-serif text-lavenderDark leading-tight">
+        Caring for Your Family, Like Our Own.
+      </h1>
+      <p class="mt-4 text-lg text-graphite">
+        Professional RN-led support for seniors & their families—bringing peace of mind, compassionate care, and reliable guidance right to your doorstep.
       </p>
-    </section>
-
-    <!-- PRICING -->
-    <section id="pricing" aria-label="Pricing">
-      <div class="split">
-        <div>
-          <div class="section-head">
-            <h2>Transparent pricing (no awkward surprises)</h2>
-            <p>
-              Choose a simple starting point. Many families begin with a check-in visit, then move into ongoing care management
-              once the rhythm is established.
-            </p>
-          </div>
-
-          <div class="pricing-grid">
-            <div class="card tier">
-              <div class="body">
-                <div class="tag">RN Care Management • Basic</div>
-                <div class="price">$350 <small>/ month</small></div>
-                <ul class="bullets">
-                  <li>Monthly wellness check-in</li>
-                  <li>Medication overview</li>
-                  <li>Family update</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="card tier featured">
-              <div class="body">
-                <div class="tag">RN Care Management • Standard</div>
-                <div class="price">$600 <small>/ month</small></div>
-                <ul class="bullets">
-                  <li>Ongoing coordination + appointments</li>
-                  <li>Home safety assessment refresh</li>
-                  <li>Regular family communication</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="card tier">
-              <div class="body">
-                <div class="tag">RN Care Management • Premium</div>
-                <div class="price">$900 <small>/ month</small></div>
-                <ul class="bullets">
-                  <li>Highest-touch oversight</li>
-                  <li>More frequent check-ins as needed</li>
-                  <li>Priority coordination and follow-through</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="card pad" style="margin-top: 16px;">
-            <h3>Other common options</h3>
-            <ul class="bullets">
-              <li><strong>Hourly RN:</strong> $150/hr (care coordination, advocacy, visit follow-ups)</li>
-              <li><strong>Concierge support:</strong> $40–$55/hr or $300–$1,600/mo packages</li>
-              <li><strong>Monthly check-in:</strong> $150 per structured RN visit</li>
-            </ul>
-            <p class="note">Pricing can be tailored based on distance, complexity, and frequency. This is a demo layout — adjust as needed.</p>
-          </div>
-        </div>
-
-        <div>
-          <div class="frame">
-            <div class="frame-inner" style="aspect-ratio: 4/3;">
-              <img src="https://images.pexels.com/photos/3823489/pexels-photo-3823489.jpeg" alt="Calm premium lifestyle scene" loading="lazy" />
-            </div>
-            <div class="caption">
-              <strong>Designed for dignity</strong>
-              <span>Clear pricing • Respectful support • Consistent updates</span>
-            </div>
-          </div>
-
-          <div class="card pad" style="margin-top: 16px;">
-            <h3>Quick “start here” suggestions</h3>
-            <ul class="bullets">
-              <li><strong>Unsure what’s going on?</strong> Start with a Monthly Check‑In Visit.</li>
-              <li><strong>Lots of moving parts?</strong> Standard membership keeps coordination steady.</li>
-              <li><strong>Family lives out of town?</strong> Premium gives the most consistent oversight.</li>
-              <li><strong>Daily-life support needed?</strong> Concierge packages keep the home running.</li>
-            </ul>
-          </div>
-        </div>
+      <div class="mt-6 flex gap-4">
+        <a href="#contact" class="bg-lavender text-white px-6 py-3 rounded-lg shadow hover:bg-lavenderDark transition">
+          Schedule a Call
+        </a>
+        <a href="#services" class="border border-lavender text-lavender px-6 py-3 rounded-lg hover:bg-lavender hover:text-white transition">
+          View Services
+        </a>
       </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section id="how" aria-label="How it works">
-      <div class="section-head">
-        <h2>A simple process that reduces stress fast</h2>
-        <p>
-          The goal is to replace uncertainty with clear information, a safer home environment, and a plan that actually gets executed.
-        </p>
-      </div>
-
-      <div class="steps" role="list">
-        <div class="card step" role="listitem">
-          <div class="num">1</div>
-          <h3>Quick call</h3>
-          <p>We learn the situation, priorities, and what would help most right now.</p>
-        </div>
-        <div class="card step" role="listitem">
-          <div class="num">2</div>
-          <h3>First visit</h3>
-          <p>On‑site wellness check + home safety review to establish a baseline.</p>
-        </div>
-        <div class="card step" role="listitem">
-          <div class="num">3</div>
-          <h3>Care plan</h3>
-          <p>A practical plan for appointments, meds, supports, and family communication.</p>
-        </div>
-        <div class="card step" role="listitem">
-          <div class="num">4</div>
-          <h3>Ongoing support</h3>
-          <p>Monthly oversight + concierge help — and updates that keep everyone aligned.</p>
-        </div>
-      </div>
-
-      <div class="card pad" style="margin-top: 16px;">
-        <h3>What “family updates” can look like</h3>
-        <p class="note">Choose the method that fits your family best — email summary, quick text, or a scheduled call.</p>
-        <ul class="bullets">
-          <li>What changed since last check‑in (mood, mobility, routines)</li>
-          <li>Safety notes (fall risks, medication concerns to clarify, home improvements)</li>
-          <li>Upcoming appointments and who’s handling what</li>
-          <li>Simple next steps for the next 2–4 weeks</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section id="gallery" aria-label="Photo gallery">
-      <div class="section-head">
-        <h2>Gallery: the kind of “help” that actually helps</h2>
-        <p>
-          These are stock photos (demo) — the captions represent the real outcomes families request: safety, organization, consistency, and dignity.
-          Click any image to view larger.
-        </p>
-      </div>
-
-      <div class="gallery" role="list">
-        <figure class="shot" role="listitem" data-title="Safety-first home check" data-desc="A calm walk-through to reduce fall risks and improve confidence at home." data-img="https://images.pexels.com/photos/6973114/pexels-photo-6973114.jpeg">
-          <img src="https://picsum.photos/seed/priviancare-g1/1000/700" alt="Home safety review concept" loading="lazy" />
-          <figcaption><strong>Safety-first home check</strong><span>Spot risks • simplify routines</span></figcaption>
-        </figure>
-
-        <figure class="shot" role="listitem" data-title="Medication clarity" data-desc="Organize, reconcile, and coordinate medication routines and questions for providers." data-img="https://images.pexels.com/photos/3683098/pexels-photo-3683098.jpeg">
-          <img src="https://picsum.photos/seed/priviancare-g2/1000/700" alt="Medication overview concept" loading="lazy" />
-          <figcaption><strong>Medication clarity</strong><span>Lists • routines • coordination</span></figcaption>
-        </figure>
-
-        <figure class="shot" role="listitem" data-title="Errands & groceries" data-desc="Reliable help with the practical stuff — so independence lasts longer." data-img="https://picsum.photos/seed/priviancare-g3/1400/900">
-          <img src="https://picsum.photos/seed/priviancare-g3/1000/700" alt="Grocery and errands support concept" loading="lazy" />
-          <figcaption><strong>Errands & groceries</strong><span>Convenience without chaos</span></figcaption>
-        </figure>
-
-        <figure class="shot" role="listitem" data-title="Appointment coordination" data-desc="Scheduling, reminders, questions to ask, and clear follow-up after visits." data-img="https://picsum.photos/seed/priviancare-g4/1400/900">
-          <img src="https://picsum.photos/seed/priviancare-g4/1000/700" alt="Appointment scheduling concept" loading="lazy" />
-          <figcaption><strong>Appointment coordination</strong><span>Before, during, after</span></figcaption>
-        </figure>
-
-        <figure class="shot" role="listitem" data-title="Meal prep support" data-desc="Simple meal prep and pantry setup that fits preferences and energy levels." data-img="https://picsum.photos/seed/priviancare-g5/1400/900">
-          <img src="https://picsum.photos/seed/priviancare-g5/1000/700" alt="Meal prep concept" loading="lazy" />
-          <figcaption><strong>Meal prep support</strong><span>Nutrition made easy</span></figcaption>
-        </figure>
-
-        <figure class="shot" role="listitem" data-title="Tech confidence" data-desc="Phone and iPad basics, apps, reminders — less frustration, more connection." data-img="https://picsum.photos/seed/priviancare-g6/1400/900">
-          <img src="https://picsum.photos/seed/priviancare-g6/1000/700" alt="Tech help concept" loading="lazy" />
-          <figcaption><strong>Tech confidence</strong><span>Stay connected</span></figcaption>
-        </figure>
-
-        <figure class="shot" role="listitem" data-title="Organization & paperwork" data-desc="Simple systems for forms, bills, notes, and important documents." data-img="https://picsum.photos/seed/priviancare-g7/1400/900">
-          <img src="https://picsum.photos/seed/priviancare-g7/1000/700" alt="Organization and paperwork concept" loading="lazy" />
-          <figcaption><strong>Organization & paperwork</strong><span>Order • calm • control</span></figcaption>
-        </figure>
-
-        <figure class="shot" role="listitem" data-title="Companionship" data-desc="A friendly visit that supports mood, routine, and social engagement." data-img="https://picsum.photos/seed/priviancare-g8/1400/900">
-          <img src="https://picsum.photos/seed/priviancare-g8/1000/700" alt="Companionship concept" loading="lazy" />
-          <figcaption><strong>Companionship</strong><span>Presence matters</span></figcaption>
-        </figure>
-
-        <figure class="shot" role="listitem" data-title="Monthly wellness check-in" data-desc="A consistent touchpoint to notice changes early and keep everyone informed." data-img="https://picsum.photos/seed/priviancare-g9/1400/900">
-          <img src="https://picsum.photos/seed/priviancare-g9/1000/700" alt="Monthly check-in concept" loading="lazy" />
-          <figcaption><strong>Monthly wellness check-in</strong><span>Consistency builds confidence</span></figcaption>
-        </figure>
-      </div>
-
-      <dialog id="lightbox" aria-label="Image preview">
-        <div class="modal">
-          <img id="lightboxImg" alt="" />
-          <div class="meta">
-            <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
-              <h3 id="lightboxTitle">Title</h3>
-              <button class="x" id="lightboxClose" aria-label="Close">✕</button>
-            </div>
-            <p id="lightboxDesc">Description</p>
-            <p class="note">Tip: swap these Picsum images with your own photos later — the framing and captions already support it.</p>
-            <a class="btn btn-primary" href="#contact" id="lightboxCta">Talk about support options →</a>
-          </div>
-        </div>
-      </dialog>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" aria-label="About">
-      <div class="split">
-        <div>
-          <div class="section-head">
-            <h2>About Privian</h2>
-            <p>
-              Privian Care Management LLC is built to make senior support feel calm, coordinated, and personal.
-              When a family is worried, speed and clarity matter — so the system is designed to deliver both.
-            </p>
-          </div>
-
-          <div class="card pad">
-            <h3>Founder note (demo copy)</h3>
-            <p class="quote">
-              “I started Privian because families deserve a steady point of contact — someone who can see the whole picture,
-              coordinate the details, and keep seniors safe and supported at home. I aim to bring professional RN oversight with
-              a concierge level of care: respectful, consistent, and human.”
-            </p>
-            <div class="sig">
-              <span aria-hidden="true">✦</span>
-              <div>
-                <em>Founder / RN</em>
-                <div class="note">One-woman practice • Minneapolis–St. Paul metro • Minnesota</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card pad" style="margin-top: 16px;">
-            <h3>Service area</h3>
-            <p class="note"><strong>Primary:</strong> Minneapolis–St. Paul metro (Twin Cities)</p>
-            <p class="note"><strong>Also:</strong> Minnesota (case-by-case depending on travel and complexity)</p>
-          </div>
-        </div>
-
-        <div>
-          <div class="frame">
-            <div class="frame-inner" style="aspect-ratio: 3/4;">
-              <img src="https://picsum.photos/seed/priviancare-founder/900/1100" alt="Founder portrait placeholder" loading="lazy" />
-            </div>
-            <div class="caption">
-              <strong>Direct, personal service</strong>
-              <span>No hand-offs • Consistent relationship</span>
-            </div>
-          </div>
-
-          <div class="card pad" style="margin-top: 16px;">
-            <h3>What makes Privian different</h3>
-            <ul class="bullets">
-              <li><strong>One consistent point of contact</strong> (not a rotating crew)</li>
-              <li><strong>RN-led oversight</strong> paired with everyday practical supports</li>
-              <li><strong>Transparent communication</strong> — families stay informed</li>
-              <li><strong>Safety-first culture</strong> — prevent problems early</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" aria-label="Frequently asked questions">
-      <div class="section-head">
-        <h2>FAQ</h2>
-        <p>Quick answers to the most common questions families have at the beginning.</p>
-      </div>
-
-      <div class="split">
-        <div>
-          <details class="card pad" open>
-            <summary>
-              Is this home healthcare or medical treatment?
-              <span class="caret" aria-hidden="true">▾</span>
-            </summary>
-            <p class="note">
-              Privian focuses on RN-led oversight, coordination, safety assessments, and supportive services.
-              It is not positioned as a home health agency in this demo.
-            </p>
-          </details>
-
-          <details class="card pad">
-            <summary>
-              Do you accept insurance?
-              <span class="caret" aria-hidden="true">▾</span>
-            </summary>
-            <p class="note">This demo assumes private pay. If you later accept partnering programs, update this copy.</p>
-          </details>
-
-          <details class="card pad">
-            <summary>
-              What areas do you serve?
-              <span class="caret" aria-hidden="true">▾</span>
-            </summary>
-            <p class="note">Minneapolis–St. Paul metro (Twin Cities). Minnesota support may be possible depending on travel and schedule.</p>
-          </details>
-        </div>
-
-        <div>
-          <details class="card pad">
-            <summary>
-              How do family updates work?
-              <span class="caret" aria-hidden="true">▾</span>
-            </summary>
-            <p class="note">Choose email summaries, quick texts, or scheduled calls — the goal is clarity and consistency.</p>
-          </details>
-
-          <details class="card pad">
-            <summary>
-              What’s the recommended first step?
-              <span class="caret" aria-hidden="true">▾</span>
-            </summary>
-            <p class="note">If you’re unsure, start with a Monthly Check‑In Visit. If things are complex, a membership is often best.</p>
-          </details>
-
-          <details class="card pad">
-            <summary>
-              Can you coordinate with doctors and clinics?
-              <span class="caret" aria-hidden="true">▾</span>
-            </summary>
-            <p class="note">Yes — care coordination and advocacy with providers is a core part of RN care management.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" aria-label="Contact">
-      <div class="section-head">
-        <h2>Contact</h2>
-        <p>
-          Tell me what’s going on and what you need most right now. We’ll start with a calm, practical plan.
-        </p>
-      </div>
-
-      <div class="contact">
-        <div class="card">
-          <h3>Privian Care Management LLC</h3>
-          <p class="note"><strong>Serving:</strong> Minneapolis–St. Paul metro • Minnesota</p>
-
-          <p class="note" style="margin-top:12px;">
-            <strong>Phone:</strong>
-            <a class="inline" href="tel:+16124021675" data-copy="(612) 402-1675">(612) 402-1675</a>
-            <button class="btn btn-ghost" style="margin-left:10px; padding:8px 12px;" data-copy-btn="(612) 402-1675" aria-label="Copy phone number">Copy</button>
-          </p>
-
-          <p class="note">
-            <strong>Email (demo):</strong>
-            <a class="inline" href="mailto:sheila@priviancare.com" data-copy="sheila@priviancare.com">sheila@priviancare.com</a>
-            <button class="btn btn-ghost" style="margin-left:10px; padding:8px 12px;" data-copy-btn="sheila@priviancare.com" aria-label="Copy email">Copy</button>
-          </p>
-
-          <div class="card pad" style="margin-top:14px; background: color-mix(in srgb, var(--panel), transparent 0%);">
-            <h3 style="margin-bottom: 6px;">Fast-start checklist (what to share)</h3>
-            <ul class="bullets">
-              <li>Who needs support + where they live</li>
-              <li>Biggest concerns (mobility, meds, safety, isolation, appointments)</li>
-              <li>Family contact preferences (email/text/call)</li>
-              <li>What “peace of mind” would look like in 30 days</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Request a consultation (demo form)</h3>
-          <p class="note">This demo form validates input and opens a pre-filled email. Replace with a real backend later.</p>
-
-          <form class="form" id="contactForm" novalidate>
-            <div class="row">
-              <label>
-                Your name
-                <input name="name" autocomplete="name" required placeholder="Jane Doe" />
-              </label>
-              <label>
-                Phone
-                <input name="phone" autocomplete="tel" required placeholder="(555) 123-4567" />
-              </label>
-            </div>
-
-            <div class="row">
-              <label>
-                Email
-                <input name="email" type="email" autocomplete="email" required placeholder="you@email.com" />
-              </label>
-              <label>
-                Preferred service
-                <input name="service" placeholder="Check-in, Care Mgmt, Concierge" />
-              </label>
-            </div>
-
-            <label>
-              What would help most right now?
-              <textarea name="message" required placeholder="A quick summary: what’s going on, what you need, and any timing constraints..."></textarea>
-            </label>
-
-            <div style="display:flex; gap:10px; align-items:center; flex-wrap: wrap;">
-              <button class="btn btn-primary" type="submit">Send request →</button>
-              <span class="helper">Or call: <a class="inline" href="tel:+16124021675">(612) 402-1675</a></span>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap">
-      <div class="foot">
-        <div>
-          <div style="display:flex; align-items:center; gap:10px; margin-bottom: 10px;">
-            <div class="mark" aria-hidden="true" style="width:34px; height:34px; border-radius: 14px;">
-              <svg width="22" height="22" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M13 1.5C7.1 1.5 2.3 6.3 2.3 12.2c0 5.9 4.8 10.7 10.7 10.7 5.9 0 10.7-4.8 10.7-10.7C23.7 6.3 18.9 1.5 13 1.5Z" stroke="rgba(230,210,164,0.9)" stroke-width="1.2"/>
-                <path d="M8.2 16.8V7.7h5.2c2 0 3.3 1.1 3.3 2.8 0 1.1-.5 1.9-1.3 2.3.9.4 1.6 1.3 1.6 2.6 0 1.9-1.4 3.4-3.7 3.4H8.2Zm2.1-5.4h2.7c1 0 1.7-.5 1.7-1.3 0-.8-.6-1.3-1.6-1.3h-2.8v2.6Zm0 3.6h3c1.2 0 1.9-.6 1.9-1.5 0-.9-.7-1.5-1.9-1.5h-3v3Z" fill="rgba(245,238,227,0.95)"/>
-              </svg>
-            </div>
-            <div>
-              <div style="font-family:'Playfair Display',serif; font-weight:800; color: var(--text);">Privian Care Management LLC</div>
-              <div class="note">Minneapolis–St. Paul metro • Minnesota</div>
-            </div>
-          </div>
-
-          <div class="note">
-            Demo site for <strong>priviancare.com</strong>.
-            Replace stock images (Picsum) and founder placeholders with real assets as the business grows.
-          </div>
-
-          <div class="note" style="margin-top: 10px;">
-            <strong>Accessibility:</strong> semantic HTML, keyboard-friendly controls, reduced-motion support.
-          </div>
-        </div>
-
-        <div>
-          <div class="note"><strong>Contact</strong></div>
-          <div class="note">Phone: <a href="tel:+16124021675">(612) 402-1675</a></div>
-          <div class="note">Email: <a href="mailto:sheila@priviancare.com">sheila@priviancare.com</a></div>
-          <div class="note" style="margin-top: 12px;"><strong>Tip</strong></div>
-          <div class="note">If you want the logo to look more “luxury concierge,” use a monogram crest (P + C) in lavender + gold.</div>
-        </div>
-      </div>
-
-      <div class="note" style="margin-top: 18px;">© <span id="year"></span> Privian Care Management LLC. All rights reserved.</div>
     </div>
-  </footer>
 
-  <div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
+    <div>
+      <img src="https://images.pexels.com/photos/339620/pexels-photo-339620.jpeg"
+           alt="Caregiver supporting a senior woman"
+           class="rounded-xl shadow-lg w-full object-cover" />
+    </div>
 
+  </div>
+</section>
 
-  <div class="toast" id="toast" role="status">Copied</div>
+<!-- SERVICES -->
+<section id="services" class="py-20">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-serif text-lavenderDark">How We Support Seniors</h2>
+    <p class="mt-2 text-gray-600">Three core services designed to meet seniors where they are—compassionately, safely, and professionally.</p>
 
-  <!-- JS moved out -->
-  <script src="script.js"></script>
+    <div class="mt-14 grid md:grid-cols-3 gap-10">
+
+      <!-- RN CARE MANAGEMENT -->
+      <div class="bg-white shadow-md rounded-xl overflow-hidden">
+        <img src="https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg"
+             alt="RN assisting senior"
+             class="h-40 w-full object-cover" />
+        <div class="p-8">
+          <h3 class="text-xl font-semibold text-lavenderDark">RN Care Management</h3>
+          <ul class="mt-4 text-left space-y-2">
+            <li>• Monthly wellness check-ins</li>
+            <li>• Health monitoring</li>
+            <li>• Appointment support</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CONCIERGE SUPPORT -->
+      <div class="bg-white shadow-md rounded-xl overflow-hidden">
+        <img src="https://images.pexels.com/photos/7551628/pexels-photo-7551628.jpeg"
+             alt="Concierge help with daily tasks"
+             class="h-40 w-full object-cover" />
+        <div class="p-8">
+          <h3 class="text-xl font-semibold text-lavenderDark">Concierge Support</h3>
+          <ul class="mt-4 text-left space-y-2">
+            <li>• Groceries, errands, housekeeping</li>
+            <li>• Meal preparation</li>
+            <li>• Companionship & tech help</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- MONTHLY CHECK-IN -->
+      <div class="bg-white shadow-md rounded-xl overflow-hidden">
+        <img src="https://images.pexels.com/photos/8962457/pexels-photo-8962457.jpeg"
+             alt="Wellness and safety check for seniors"
+             class="h-40 w-full object-cover" />
+        <div class="p-8">
+          <h3 class="text-xl font-semibold text-lavenderDark">Monthly Check-In Visit</h3>
+          <ul class="mt-4 text-left space-y-2">
+            <li>• Safety review & wellness screening</li>
+            <li>• Medication overview</li>
+            <li>• Written family report</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY FAMILIES CHOOSE US -->
+<section class="py-20 bg-graysoft">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-3xl font-serif text-lavenderDark text-center">Why Families Choose Us</h2>
+
+    <!-- Collage -->
+    <div class="mt-10 grid grid-cols-6 gap-3 opacity-95">
+
+      <img src="https://images.pexels.com/photos/7551646/pexels-photo-7551646.jpeg"
+           alt="Caregiving moment"
+           class="rounded-lg col-span-2 h-32 object-cover shadow-sm" />
+
+      <img src="https://images.pexels.com/photos/7551611/pexels-photo-7551611.jpeg"
+           alt="Senior companionship"
+           class="rounded-lg col-span-2 h-32 object-cover shadow-sm" />
+
+      <img src="https://images.pexels.com/photos/7551627/pexels-photo-7551627.jpeg"
+           alt="Home care support"
+           class="rounded-lg col-span-2 h-32 object-cover shadow-sm" />
+
+      <img src="https://images.pexels.com/photos/19956108/pexels-photo-19956108.jpeg"
+           alt="Friendly caregiver"
+           class="rounded-lg col-span-3 h-32 object-cover shadow-sm" />
+
+      <img src="https://images.pexels.com/photos/19995467/pexels-photo-19995467.jpeg"
+           alt="Helping hands"
+           class="rounded-lg col-span-3 h-32 object-cover shadow-sm" />
+
+    </div>
+
+    <div class="mt-10 grid md:grid-cols-2 gap-8 text-lg">
+      <div>✔ RN-led expertise</div>
+      <div>✔ No minimum hours required</div>
+      <div>✔ Clear, transparent pricing</div>
+      <div>✔ Safety-first assessments</div>
+      <div>✔ Customized care plans</div>
+      <div>✔ Peace of mind for family members</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-serif text-lavenderDark">Speak With Our RN Care Specialist</h2>
+    <p class="mt-4 text-lg text-gray-600">
+      Get personalized guidance and support for your loved one.
+      We're here to help you navigate care with confidence.
+    </p>
+
+    <div class="mt-10 space-y-3 text-xl">
+      <p><strong>Phone:</strong> <a href="tel:6124021675" class="text-lavenderDark underline">612-402-1675</a></p>
+      <p><strong>Email:</strong> <a href="mailto:sheilaprokuski@gmail.com" class="text-lavenderDark underline">sheilaprokuski@gmail.com</a></p>
+    </div>
+
+    <a href="mailto:sheilaprokuski@gmail.com" class="mt-10 inline-block bg-lavender text-white px-10 py-4 rounded-lg shadow hover:bg-lavenderDark transition text-xl">
+      Schedule a Call
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-lavenderDark text-white py-10">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <p class="text-lg font-semibold">Privian Care Management</p>
+    <p class="mt-1">Minnesota, USA</p>
+    <p class="mt-1">© 2025 Privian Care Management. All rights reserved.</p>
+  </div>
+</footer>
+
 </body>
 </html>
