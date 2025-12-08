@@ -137,8 +137,11 @@
 <script>
   const btn = document.getElementById("menuBtn");
   const menu = document.getElementById("mobileMenu");
-  btn.add.addEventListener("click", () => {
+
+  btn.addEventListener("click", () => {
     menu.classList.toggle("hidden");
+    menu.classList.toggle("opacity-0");
+    menu.classList.toggle("opacity-100");
   });
 </script>
 
