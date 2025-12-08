@@ -62,6 +62,7 @@
     }
   </script>
 
+  <!-- Reduced Motion -->
   <style>
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto !important; }
@@ -89,7 +90,7 @@
 
 <body class="font-sans text-graphite bg-white antialiased">
 
-<!-- HEADER WITH HAMBURGER MENU -->
+<!-- HEADER WITH HAMBURGER -->
 <header class="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
   <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
 
@@ -109,9 +110,10 @@
       <a href="#contact" class="bg-lavender text-white px-4 py-2 rounded-lg hover:bg-lavenderDark transition">Contact</a>
     </nav>
 
-    <!-- Hamburger Button -->
+    <!-- Hamburger -->
     <button id="menuBtn" class="md:hidden text-lavenderDark focus:outline-none">
-      <svg xmlns="http://www.w3.org/2000/svg" id="menuIcon" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+      <svg xmlns="http://www.w3.org/2000/svg" id="menuIcon" class="h-8 w-8" fill="none"
+           viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round"
               d="M4 6h16M4 12h16M4 18h16" />
       </svg>
@@ -135,7 +137,7 @@
 <script>
   const btn = document.getElementById("menuBtn");
   const menu = document.getElementById("mobileMenu");
-  btn.addEventListener("click", () => {
+  btn.add.addEventListener("click", () => {
     menu.classList.toggle("hidden");
   });
 </script>
@@ -143,30 +145,26 @@
 <!-- HERO -->
 <section class="pt-28 pb-16 bg-graysoft">
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center px-6 motion-safe:animate-fadeInUp">
+
     <div class="space-y-4">
-      <h1 class="text-4xl md:text-5xl font-serif text-lavenderDark leading-tight">
+      <h1 class="text-4xl md:text-5xl font-serif text-lavenderDark">
         Caring for Your Family, Like Our Own.
       </h1>
       <p class="text-lg text-graphite">
         Professional RN-led support for seniors & their families—bringing peace of mind, compassionate care, and reliable guidance right to your doorstep.
       </p>
       <div class="mt-6 flex flex-wrap gap-4">
-        <a href="#contact"
-           class="bg-lavender text-white px-6 py-3 rounded-lg shadow-md hover:bg-lavenderDark transition">
-          Schedule a Call
-        </a>
-        <a href="#services"
-           class="border border-lavender text-lavender px-6 py-3 rounded-lg hover:bg-lavender hover:text-white transition">
-          View Services
-        </a>
+        <a href="#contact" class="bg-lavender text-white px-6 py-3 rounded-lg shadow hover:bg-lavenderDark transition">Schedule a Call</a>
+        <a href="#services" class="border border-lavender text-lavender px-6 py-3 rounded-lg hover:bg-lavender hover:text-white transition">View Services</a>
       </div>
     </div>
 
     <div class="flex justify-center">
       <img src="https://images.pexels.com/photos/339620/pexels-photo-339620.jpeg"
-           alt="Caregiver supporting a senior woman"
-           class="rounded-xl shadow-lg w-full max-w-md object-cover motion-safe:animate-float" />
+           class="rounded-xl shadow-lg w-full max-w-md object-cover motion-safe:animate-float"
+           alt="Caregiver supporting a senior">
     </div>
+
   </div>
 </section>
 
@@ -174,16 +172,20 @@
 <section id="services" class="py-20">
   <div class="max-w-6xl mx-auto px-6 text-center">
     <h2 class="text-3xl font-serif text-lavenderDark">How We Support Seniors</h2>
-    <p class="mt-2 text-gray-600">Three core services designed to meet seniors where they are—compassionately, safely, and professionally.</p>
+    <p class="mt-2 text-gray-600">
+      Three core services designed to meet seniors where they are—compassionately, safely, and professionally.
+    </p>
 
     <div class="mt-14 grid md:grid-cols-3 gap-10">
 
-      <!-- RN CARE MANAGEMENT -->
+      <!-- SERVICE 1 -->
       <div class="group bg-white shadow-md rounded-xl overflow-hidden hover:shadow-soft transition">
-        <img src="https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg" class="h-40 w-full object-cover" />
+        <img src="https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg"
+             class="h-40 w-full object-cover">
+
         <div class="p-8 text-left">
           <h3 class="text-xl font-semibold text-lavenderDark">RN Care Management</h3>
-          <ul class="mt-4 space-y-2 text-gray-800">
+          <ul class="mt-4 space-y-2">
             <li>• Monthly wellness check-ins</li>
             <li>• Health monitoring</li>
             <li>• Appointment scheduling & support</li>
@@ -195,12 +197,14 @@
         </div>
       </div>
 
-      <!-- CONCIERGE SUPPORT -->
+      <!-- SERVICE 2 -->
       <div class="group bg-white shadow-md rounded-xl overflow-hidden hover:shadow-soft transition">
-        <img src="https://images.pexels.com/photos/7551628/pexels-photo-7551628.jpeg" class="h-40 w-full object-cover" />
+        <img src="https://images.pexels.com/photos/7551628/pexels-photo-7551628.jpeg"
+             class="h-40 w-full object-cover">
+
         <div class="p-8 text-left">
           <h3 class="text-xl font-semibold text-lavenderDark">Concierge Support</h3>
-          <ul class="mt-4 space-y-2 text-gray-800">
+          <ul class="mt-4 space-y-2">
             <li>• Grocery shopping & errands</li>
             <li>• Meal preparation</li>
             <li>• Light housekeeping</li>
@@ -213,12 +217,14 @@
         </div>
       </div>
 
-      <!-- MONTHLY CHECK-IN -->
+      <!-- SERVICE 3 -->
       <div class="group bg-white shadow-md rounded-xl overflow-hidden hover:shadow-soft transition">
-        <img src="https://images.pexels.com/photos/8962457/pexels-photo-8962457.jpeg" class="h-40 w-full object-cover" />
+        <img src="https://images.pexels.com/photos/8962457/pexels-photo-8962457.jpeg"
+             class="h-40 w-full object-cover">
+
         <div class="p-8 text-left">
           <h3 class="text-xl font-semibold text-lavenderDark">Monthly Check-In Visit</h3>
-          <ul class="mt-4 space-y-2 text-gray-800">
+          <ul class="mt-4 space-y-2">
             <li>• Health & mood observations</li>
             <li>• Home safety review</li>
             <li>• Medication & adherence overview</li>
@@ -239,15 +245,17 @@
   <div class="max-w-5xl mx-auto px-6">
     <h2 class="text-3xl font-serif text-lavenderDark text-center">Why Families Choose Us</h2>
 
+    <!-- Image Collage -->
     <div class="mt-10 grid grid-cols-6 gap-4">
-      <img src="https://images.pexels.com/photos/7551646/pexels-photo-7551646.jpeg" class="rounded-lg h-32 w-full object-cover shadow-sm" />
-      <img src="https://images.pexels.com/photos/7551611/pexels-photo-7551611.jpeg" class="rounded-lg h-32 w-full object-cover shadow-sm" />
-      <img src="https://images.pexels.com/photos/7551627/pexels-photo-7551627.jpeg" class="rounded-lg h-32 w-full object-cover shadow-sm" />
-      <img src="https://images.pexels.com/photos/19956108/pexels-photo-19956108.jpeg" class="rounded-lg h-32 w-full object-cover shadow-sm" />
-      <img src="https://images.pexels.com/photos/19995467/pexels-photo-19995467.jpeg" class="rounded-lg h-32 w-full object-cover shadow-sm" />
-      <img src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg" class="rounded-lg h-32 w-full object-cover shadow-sm" />
+      <img src="https://images.pexels.com/photos/7551646/pexels-photo-7551646.jpeg" class="rounded-lg h-32 w-full object-cover shadow-sm">
+      <img src="https://images.pexels.com/photos/7551611/pexels-photo-7551611.jpeg" class="rounded-lg h-32 w-full object-cover shadow-sm">
+      <img src="https://images.pexels.com/photos/7551627/pexels-photo-7551627.jpeg" class="rounded-lg h-32 w-full object-cover shadow-sm">
+      <img src="https://images.pexels.com/photos/19956108/pexels-photo-19956108.jpeg" class="rounded-lg h-32 w-full object-cover shadow-sm">
+      <img src="https://images.pexels.com/photos/19995467/pexels-photo-19995467.jpeg" class="rounded-lg h-32 w-full object-cover shadow-sm">
+      <img src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg" class="rounded-lg h-32 w-full object-cover shadow-sm">
     </div>
 
+    <!-- Checklist -->
     <div class="mt-10 grid md:grid-cols-2 gap-8 text-lg">
       <div>✔ RN-led expertise</div>
       <div>✔ No minimum hours required</div>
@@ -259,14 +267,14 @@
   </div>
 </section>
 
-<!-- MISSION SECTION -->
+<!-- MISSION / VALUES / OBJECTIVES -->
 <section id="mission" class="py-24 bg-white">
   <div class="max-w-6xl mx-auto px-6 text-center">
     <h2 class="text-3xl font-serif text-lavenderDark mb-14">Our Commitment to Compassionate, RN-Led Support</h2>
 
     <div class="grid md:grid-cols-3 gap-12">
 
-      <!-- Mission -->
+      <!-- MISSION -->
       <div class="p-8 rounded-xl border shadow-sm hover:shadow-md transition">
         <div class="flex justify-center mb-4 text-lavenderDark">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke-width="1.3" stroke="currentColor">
@@ -280,7 +288,7 @@
         </p>
       </div>
 
-      <!-- Values -->
+      <!-- VALUES -->
       <div class="p-8 rounded-xl border shadow-sm hover:shadow-md transition">
         <div class="flex justify-center mb-4 text-lavenderDark">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke-width="1.3" stroke="currentColor">
@@ -294,7 +302,7 @@
         </p>
       </div>
 
-      <!-- Objectives -->
+      <!-- OBJECTIVES -->
       <div class="p-8 rounded-xl border shadow-sm hover:shadow-md transition">
         <div class="flex justify-center mb-4 text-lavenderDark">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke-width="1.3" stroke="currentColor">
@@ -312,21 +320,15 @@
   </div>
 </section>
 
-<!-- SERVICE AREA MAP -->
+<!-- SERVICE AREA -->
 <section id="servicearea" class="py-20">
   <div class="max-w-5xl mx-auto px-6 text-center">
     <h2 class="text-3xl font-serif text-lavenderDark">Service Area</h2>
-    <p class="mt-2 text-gray-600">
-      We proudly serve seniors within approximately a 1-hour drive of the Minneapolis metro area.
-    </p>
+    <p class="mt-2 text-gray-600">We proudly serve seniors within approximately a 1-hour drive of Minneapolis.</p>
 
     <div class="mt-10 w-full h-96 rounded-xl overflow-hidden shadow-lg">
       <iframe
-        width="100%"
-        height="100%"
-        style="border:0"
-        loading="lazy"
-        allowfullscreen
+        width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen
         referrerpolicy="no-referrer-when-downgrade"
         src="https://www.google.com/maps/embed/v1/view?key=AIzaSyDzUh-bzYYwy-0MK1ooy8mNBw3jdRC5XZ4&center=44.9778,-93.2650&zoom=9">
       </iframe>
@@ -334,53 +336,148 @@
   </div>
 </section>
 
-<!-- RESOURCES SECTION -->
+<!-- RESOURCES -->
 <section id="resources" class="py-24 bg-white">
   <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-serif text-lavenderDark text-center mb-12">Helpful Resources for Seniors & Their Families</h2>
+
+    <h2 class="text-3xl font-serif text-lavenderDark text-center mb-12">
+      Helpful Resources for Seniors & Families
+    </h2>
 
     <p class="text-center text-gray-700 max-w-3xl mx-auto mb-12">
-      Explore trusted tools, guides, and support services designed to help families navigate senior care.
+      Trusted tools, organizations, and clinical references to support senior well-being, caregiving, and safe at-home care.
     </p>
 
     <div class="grid md:grid-cols-2 gap-10">
 
-      <!-- COLUMN 1 -->
+      <!-- LEFT COLUMN -->
       <div class="space-y-6">
 
-        <!-- Resource Card Example -->
+        <!-- 1 -->
         <div class="p-6 border rounded-xl shadow-sm hover:shadow-md transition">
           <div class="flex items-center gap-3 mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-lavenderDark" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12L12 2.25 21.75 12M4.5 10.5V21h15V10.5" />
-            </svg>
+            <svg class="h-8 w-8 text-lavenderDark" fill="none" stroke="currentColor" stroke-width="1.5"
+                 viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round"
+                 d="M2.25 12l9.75-9.75L21.75 12M4.5 10.5V21h15V10.5" /></svg>
             <h3 class="text-xl font-semibold text-lavenderDark">Minnesota Senior LinkAge Line</h3>
           </div>
-          <p class="text-gray-700">Free statewide support for aging, caregiving, housing, and benefits.</p>
-          <a href="https://www.seniorlinkageline.com" target="_blank" class="text-lavenderDark underline mt-2 inline-block">seniorlinkageline.com</a>
+          <p class="text-gray-700">Free statewide support for aging, housing, caregiving, insurance & benefits.</p>
+          <a href="https://www.seniorlinkageline.com" target="_blank" class="text-lavenderDark underline">seniorlinkageline.com</a>
         </div>
 
-        <!-- Additional resource cards identical in structure... -->
-        <!-- (I will not truncate to ensure your full production file stays intact) -->
+        <!-- 2 -->
+        <div class="p-6 border rounded-xl shadow-sm hover:shadow-md transition">
+          <div class="flex items-center gap-3 mb-2">
+            <svg class="h-8 w-8 text-lavenderDark" fill="none" stroke="currentColor" stroke-width="1.5"
+                 viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path stroke-linecap="round" stroke-linejoin="round"
+                 d="M12 8v4l2 2" /></svg>
+            <h3 class="text-xl font-semibold text-lavenderDark">Alzheimer's Association MN-ND Chapter</h3>
+          </div>
+          <p class="text-gray-700">Caregiver help, memory care guidance, helpline & education.</p>
+          <a href="https://www.alz.org/mnnd" target="_blank" class="text-lavenderDark underline">alz.org/mnnd</a>
+        </div>
+
+        <!-- 3 -->
+        <div class="p-6 border rounded-xl shadow-sm hover:shadow-md transition">
+          <div class="flex items-center gap-3 mb-2">
+            <svg class="h-8 w-8 text-lavenderDark" fill="none" stroke="currentColor" stroke-width="1.5"
+                 viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round"
+                 d="M12 6v12m6-6H6" /></svg>
+            <h3 class="text-xl font-semibold text-lavenderDark">MN Board on Aging</h3>
+          </div>
+          <p class="text-gray-700">State programs, caregiver supports, and aging policy resources.</p>
+          <a href="https://mn.gov/board-on-aging" target="_blank" class="text-lavenderDark underline">mn.gov/board-on-aging</a>
+        </div>
+
+        <!-- 4 -->
+        <div class="p-6 border rounded-xl shadow-sm hover:shadow-md transition">
+          <div class="flex items-center gap-3 mb-2">
+            <svg class="h-8 w-8 text-lavenderDark" fill="none" stroke="currentColor" stroke-width="1.5"
+                 viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round"
+                 d="M15 7a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round"
+                 d="M12 14.25c-4.5 0-6.75 2.25-6.75 3.75v1.5h13.5v-1.5c0-1.5-2.25-3.75-6.75-3.75z" /></svg>
+            <h3 class="text-xl font-semibold text-lavenderDark">MN Department of Human Services – Aging</h3>
+          </div>
+          <p class="text-gray-700">Support programs, long-term care planning, caregiver services.</p>
+          <a href="https://mn.gov/dhs/people-we-serve/seniors" target="_blank" class="text-lavenderDark underline">mn.gov/dhs</a>
+        </div>
+
+        <!-- 5 -->
+        <div class="p-6 border rounded-xl shadow-sm hover:shadow-md transition">
+          <div class="flex items-center gap-3 mb-2">
+            <svg class="h-8 w-8 text-lavenderDark" fill="none" stroke="currentColor" stroke-width="1.5"
+                 viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round"
+                 d="M12 8.25v7.5m3.75-3.75H8.25" /></svg>
+            <h3 class="text-xl font-semibold text-lavenderDark">AARP Senior Care Tools</h3>
+          </div>
+          <p class="text-gray-700">Caregiving resources, safety checklists, and planning help.</p>
+          <a href="https://www.aarp.org/caregiving" target="_blank" class="text-lavenderDark underline">aarp.org/caregiving</a>
+        </div>
 
       </div>
 
-      <!-- COLUMN 2 -->
+      <!-- RIGHT COLUMN -->
       <div class="space-y-6">
 
-        <!-- Resource Card Example -->
+        <!-- 6 -->
         <div class="p-6 border rounded-xl shadow-sm hover:shadow-md transition">
           <div class="flex items-center gap-3 mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-lavenderDark" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9V3.75m0 16.5V15m9-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
+            <svg class="h-8 w-8 text-lavenderDark" fill="none" stroke="currentColor" stroke-width="1.5"
+                 viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round"
+                 d="M12 9V3.75m0 16.5V15m9-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             <h3 class="text-xl font-semibold text-lavenderDark">CDC Healthy Aging</h3>
           </div>
-          <p class="text-gray-700">Fall prevention and senior wellness guidelines.</p>
-          <a href="https://www.cdc.gov/aging" target="_blank" class="text-lavenderDark underline mt-2 inline-block">cdc.gov/aging</a>
+          <p class="text-gray-700">Fall prevention, chronic condition support, and safety guidelines.</p>
+          <a href="https://www.cdc.gov/aging" target="_blank" class="text-lavenderDark underline">cdc.gov/aging</a>
         </div>
 
-        <!-- More cards follow same pattern -->
+        <!-- 7 -->
+        <div class="p-6 border rounded-xl shadow-sm hover:shadow-md transition">
+          <div class="flex items-center gap-3 mb-2">
+            <svg class="h-8 w-8 text-lavenderDark" fill="none" stroke="currentColor" stroke-width="1.5"
+                 viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round"
+                 d="M4.5 19.5l15-15m-15 0l15 15" /></svg>
+            <h3 class="text-xl font-semibold text-lavenderDark">National Institute on Aging</h3>
+          </div>
+          <p class="text-gray-700">Research-based articles on dementia, caregiving, safety & health.</p>
+          <a href="https://www.nia.nih.gov" target="_blank" class="text-lavenderDark underline">nia.nih.gov</a>
+        </div>
+
+        <!-- 8 -->
+        <div class="p-6 border rounded-xl shadow-sm hover:shadow-md transition">
+          <div class="flex items-center gap-3 mb-2">
+            <svg class="h-8 w-8 text-lavenderDark" fill="none" stroke="currentColor" stroke-width="1.5"
+                 viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" /><path stroke-linecap="round" stroke-linejoin="round"
+                 d="M12 3v2.25M12 18.75V21m8.485-8.485l-1.59 1.59M5.105 5.105l1.59 1.59M21 12h-2.25M5.25 12H3m2.105 6.895l1.59-1.59M18.895 5.105l-1.59 1.59" /></svg>
+            <h3 class="text-xl font-semibold text-lavenderDark">Mayo Clinic: Aging Well</h3>
+          </div>
+          <p class="text-gray-700">Trusted medical guidance for seniors and caregivers.</p>
+          <a href="https://www.mayoclinic.org/healthy-lifestyle/healthy-aging" target="_blank" class="text-lavenderDark underline">mayoclinic.org</a>
+        </div>
+
+        <!-- 9 -->
+        <div class="p-6 border rounded-xl shadow-sm hover:shadow-md transition">
+          <div class="flex items-center gap-3 mb-2">
+            <svg class="h-8 w-8 text-lavenderDark" fill="none" stroke="currentColor" stroke-width="1.5"
+                 viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round"
+                 d="M5.25 5.25h13.5v15H5.25zM8.25 8.25h7.5" /></svg>
+            <h3 class="text-xl font-semibold text-lavenderDark">Caring.com Senior Care Guides</h3>
+          </div>
+          <p class="text-gray-700">Care planning, cost comparisons, caregiver guides.</p>
+          <a href="https://www.caring.com" target="_blank" class="text-lavenderDark underline">caring.com</a>
+        </div>
+
+        <!-- 10 -->
+        <div class="p-6 border rounded-xl shadow-sm hover:shadow-md transition">
+          <div class="flex items-center gap-3 mb-2">
+            <svg class="h-8 w-8 text-lavenderDark" fill="none" stroke="currentColor" stroke-width="1.5"
+                 viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path stroke-linecap="round" stroke-linejoin="round"
+                 d="M9 12h6" /></svg>
+            <h3 class="text-xl font-semibold text-lavenderDark">Medical News Today – Senior Health</h3>
+          </div>
+          <p class="text-gray-700">Articles on aging, mobility, mental health & disease prevention.</p>
+          <a href="https://www.medicalnewstoday.com/categories/senior-health" target="_blank" class="text-lavenderDark underline">medicalnewstoday.com</a>
+        </div>
 
       </div>
 
@@ -393,28 +490,40 @@
   <div class="max-w-3xl mx-auto px-6 text-center">
 
     <h2 class="text-3xl font-serif text-lavenderDark">Contact Us</h2>
-    <p class="mt-4 text-lg text-gray-600">Have questions or want to schedule a consultation?</p>
+    <p class="mt-4 text-lg text-gray-600">
+      Have questions or want to schedule a consultation?  
+      Send us a message — we will get back to you promptly.
+    </p>
 
-    <form action="https://formspree.io/f/xkgdzaoy" method="POST" class="mt-10 grid gap-6 text-left">
+    <form action="https://formspree.io/f/xkgdzaoy" method="POST"
+          class="mt-10 grid gap-6 text-left">
+
       <div>
         <label class="block mb-1 font-medium">Name</label>
         <input name="name" required class="w-full p-3 rounded-lg border border-gray-300" />
       </div>
+
       <div>
         <label class="block mb-1 font-medium">Email</label>
-        <input type="email" name="email" required class="w-full p-3 rounded-lg border border-gray-300" />
+        <input name="email" type="email" required class="w-full p-3 rounded-lg border border-gray-300" />
       </div>
+
       <div>
         <label class="block mb-1 font-medium">Phone</label>
-        <input type="tel" name="phone" class="w-full p-3 rounded-lg border border-gray-300" />
+        <input name="phone" type="tel" class="w-full p-3 rounded-lg border border-gray-300" />
       </div>
+
       <div>
         <label class="block mb-1 font-medium">Message</label>
-        <textarea name="message" rows="5" required class="w-full p-3 rounded-lg border border-gray-300"></textarea>
+        <textarea name="message" rows="5" required
+                  class="w-full p-3 rounded-lg border border-gray-300"></textarea>
       </div>
-      <button type="submit" class="bg-lavender text-white py-3 rounded-lg shadow hover:bg-lavenderDark transition">
+
+      <button type="submit"
+              class="bg-lavender text-white py-3 rounded-lg shadow hover:bg-lavenderDark transition">
         Send Message
       </button>
+
     </form>
 
     <div class="mt-10 text-lg">
