@@ -161,35 +161,37 @@
 </script>
 
 <!-- HERO -->
-<section class="pt-32 pb-16 bg-graysoft">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-6">
+<section class="relative h-[75vh] flex items-center bg-cover bg-center"
+         style="background-image: url('https://images.pexels.com/photos/339620/pexels-photo-339620.jpeg');">
+  
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-lavenderDark/40"></div>
 
-    <div class="space-y-4">
-      <h1 class="text-4xl md:text-5xl font-serif text-lavenderDark leading-tight">
-        Caring for Your Family, Like Our Own.
-      </h1>
-      <p class="text-lg text-graphite">
-        Professional RN-led support for seniors & their families—bringing peace of mind, compassionate care, and reliable guidance right to your doorstep.
-      </p>
+  <!-- Text -->
+  <div class="relative max-w-5xl mx-auto px-6 text-white">
+    <h1 class="text-4xl md:text-6xl font-serif mb-4 drop-shadow-lg">
+      Caring for Your Family,<br> Like Our Own.
+    </h1>
 
-      <div class="mt-6 flex gap-4 flex-wrap">
-        <a href="#contact" class="bg-lavender text-white px-6 py-3 rounded-lg hover:bg-lavenderDark shadow">
-          Schedule a Call
-        </a>
-        <a href="#services" class="border border-lavender text-lavender px-6 py-3 rounded-lg hover:bg-lavender hover:text-white">
-          View Services
-        </a>
-      </div>
+    <p class="text-lg md:text-2xl max-w-2xl mb-8 drop-shadow">
+      Professional RN-led support for seniors—bringing peace of mind, compassionate care,
+      and reliable guidance right to your doorstep.
+    </p>
+
+    <div class="flex flex-wrap gap-4">
+      <a href="#contact"
+         class="bg-white text-lavenderDark font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-100 transition">
+        Schedule a Call
+      </a>
+      <a href="#services"
+         class="bg-transparent border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-lavenderDark transition">
+        View Services
+      </a>
     </div>
-
-    <div class="flex justify-center">
-      <img src="https://images.pexels.com/photos/339620/pexels-photo-339620.jpeg"
-           class="rounded-xl shadow-lg w-full max-w-md object-cover motion-safe:animate-float"
-           alt="Caregiver supporting a senior woman">
-    </div>
-
   </div>
+
 </section>
+
 
 <!-- SERVICES -->
 <section id="services" class="py-20">
