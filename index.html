@@ -510,25 +510,69 @@
 </section>
 
 
-
 <!-- SERVICE AREA MAP -->
-<div class="mt-14 max-w-md mx-auto text-left">
-  <h3 class="text-xl font-semibold text-lavenderDark mb-4 text-center">
-    Check If You're in Our Service Area
-  </h3>
+<section class="py-20 bg-white">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-serif text-lavenderDark">Service Area</h2>
+    <p class="mt-2 text-gray-600">
+      We proudly serve seniors within approximately one hour of Minneapolis and the surrounding metro communities.
+    </p>
 
-  <input id="autoServiceAreaInput" type="text"
-    placeholder="Enter your city, address, or ZIP code"
-    class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lavender" />
+    <!-- MAP (kept exactly as before) -->
+    <div class="mt-10 w-full h-96 rounded-xl overflow-hidden shadow-lg">
+      <iframe width="100%" height="100%" style="border:0"
+              loading="lazy" allowfullscreen
+              src="https://www.google.com/maps/embed/v1/view?key=AIzaSyDzUh-bzYYwy-0MK1ooy8mNBw3jdRC5XZ4&center=44.9778,-93.2650&zoom=9">
+      </iframe>
+    </div>
 
-  <button onclick="autoCheckServiceArea()"
-    class="mt-4 w-full bg-lavender text-white py-3 rounded-lg hover:bg-lavenderDark transition">
-    Check Availability
-  </button>
+    <!-- Cities List -->
+    <div class="mt-12">
+      <h3 class="text-xl font-semibold text-lavenderDark mb-4">Areas We Commonly Serve</h3>
 
-  <div id="autoServiceResult" class="mt-4 text-center text-lg font-medium"></div>
-</div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-gray-700 text-sm">
+        <span>• Minneapolis</span>
+        <span>• Saint Paul</span>
+        <span>• Bloomington</span>
+        <span>• Edina</span>
+        <span>• Eden Prairie</span>
+        <span>• Minnetonka</span>
+        <span>• Plymouth</span>
+        <span>• Maple Grove</span>
+        <span>• Brooklyn Park</span>
+        <span>• Burnsville</span>
+        <span>• Eagan</span>
+        <span>• Apple Valley</span>
+        <span>• Lakeville</span>
+        <span>• Woodbury</span>
+        <span>• Stillwater</span>
+        <span>• Blaine</span>
+        <span>• Coon Rapids</span>
+        <span>• Roseville</span>
+      </div>
+    </div>
 
+    <!-- AUTOMATED SERVICE AREA CHECKER -->
+    <div class="mt-14 max-w-md mx-auto text-left">
+      <h3 class="text-xl font-semibold text-lavenderDark mb-4 text-center">
+        Check If You're in Our Service Area
+      </h3>
+
+      <input id="autoServiceAreaInput" type="text"
+        placeholder="Enter your city, address, or ZIP code"
+        class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-lavender" />
+
+      <button onclick="autoCheckServiceArea()"
+        class="mt-4 w-full bg-lavender text-white py-3 rounded-lg hover:bg-lavenderDark transition">
+        Check Availability
+      </button>
+
+      <div id="autoServiceResult" class="mt-4 text-center text-lg font-medium"></div>
+    </div>
+  </div>
+</section>
+
+<!-- DISTANCE CHECKER LOGIC -->
 <script>
   const apiKey = "AIzaSyDzUh-bzYYwy-0MK1ooy8mNBw3jdRC5XZ4";
 
@@ -538,8 +582,8 @@
     lng: -93.2650,
   };
 
-  // Service radius in miles
-  const maxDistanceMiles = 50; // ~1 hour driving radius
+  // Maximum distance in miles (~1-hour driving range)
+  const maxDistanceMiles = 50;
 
   function autoCheckServiceArea() {
     const input = document.getElementById("autoServiceAreaInput").value.trim();
@@ -550,7 +594,7 @@
       return;
     }
 
-    // Geocode input (convert to lat/lng)
+    // Step 1: Geocode the user input
     fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(input)}&key=${apiKey}`)
       .then(response => response.json())
       .then(data => {
@@ -561,37 +605,36 @@
 
         const userLocation = data.results[0].geometry.location;
 
-        // Use Distance Matrix to calculate driving distance
-        const distanceUrl = `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${serviceCenter.lat},${serviceCenter.lng}&destinations=${userLocation.lat},${userLocation.lng}&key=${apiKey}`;
+        // Step 2: Calculate driving distance
+        const distanceUrl = 
+          `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${serviceCenter.lat},${serviceCenter.lng}&destinations=${userLocation.lat},${userLocation.lng}&key=${apiKey}`;
 
         fetch(distanceUrl)
           .then(response => response.json())
           .then(distanceData => {
-            if (!distanceData.rows || !distanceData.rows[0].elements[0].distance) {
+            const element = distanceData.rows?.[0]?.elements?.[0];
+
+            if (!element || !element.distance) {
               resultBox.innerHTML = "<span class='text-red-600'>Unable to calculate distance.</span>";
               return;
             }
 
-            // Extract distance in meters → convert to miles
-            const meters = distanceData.rows[0].elements[0].distance.value;
-            const miles = meters / 1609.34;
+            const miles = element.distance.value / 1609.34;
 
             if (miles <= maxDistanceMiles) {
               resultBox.innerHTML = `
-                <span class='text-green-700'>Yes! You are inside our service area (${miles.toFixed(1)} miles away).</span><br>
-                <a href="#contact" class="text-lavenderDark underline font-semibold">
-                  Contact Us Now →
-                </a>
+                <span class='text-green-700'>
+                  Yes! You're inside our service area (${miles.toFixed(1)} miles away).
+                </span><br>
+                <a href="#contact" class="text-lavenderDark underline font-semibold">Contact Us Now →</a>
               `;
             } else {
               resultBox.innerHTML = `
                 <span class='text-yellow-700'>
-                  You may be slightly outside our normal range (${miles.toFixed(1)} miles away),
+                  You may be slightly outside our typical range (${miles.toFixed(1)} miles),
                   but we may still assist depending on your needs.
                 </span><br>
-                <a href="#contact" class="text-lavenderDark underline font-semibold">
-                  Contact Us to Discuss Options →
-                </a>
+                <a href="#contact" class="text-lavenderDark underline font-semibold">Contact Us →</a>
               `;
             }
           });
