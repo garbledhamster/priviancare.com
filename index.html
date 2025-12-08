@@ -574,76 +574,78 @@
 
 <!-- DISTANCE CHECKER LOGIC -->
 <script>
-  const apiKey = "AIzaSyDzUh-bzYYwy-0MK1ooy8mNBw3jdRC5XZ4";
+  // Center of your service area (Minneapolis)
+  const serviceCenterLatLng = { lat: 44.9778, lng: -93.2650 };
+  const maxDistanceMiles = 50; // adjust if you want a larger/smaller radius
 
-  // Minneapolis center point
-  const serviceCenter = {
-    lat: 44.9778,
-    lng: -93.2650,
-  };
+  let serviceGeocoder = null;
 
-  // Maximum distance in miles (~1-hour driving range)
-  const maxDistanceMiles = 50;
+  // Called by the Maps JS API when it finishes loading
+  function initServiceAreaChecker() {
+    serviceGeocoder = new google.maps.Geocoder();
+  }
 
   function autoCheckServiceArea() {
-    const input = document.getElementById("autoServiceAreaInput").value.trim();
+    const inputEl = document.getElementById("autoServiceAreaInput");
     const resultBox = document.getElementById("autoServiceResult");
+    const value = (inputEl.value || "").trim();
 
-    if (!input) {
+    if (!value) {
       resultBox.innerHTML = "<span class='text-red-600'>Please enter a city or ZIP code.</span>";
       return;
     }
 
-    // Step 1: Geocode the user input
-    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(input)}&key=${apiKey}`)
-      .then(response => response.json())
-      .then(data => {
-        if (!data.results || !data.results.length) {
-          resultBox.innerHTML = "<span class='text-red-600'>Location not found. Please try again.</span>";
-          return;
-        }
+    if (!serviceGeocoder || !window.google || !google.maps) {
+      resultBox.innerHTML = "<span class='text-red-600'>Map services are still loading. Please try again in a moment.</span>";
+      return;
+    }
 
-        const userLocation = data.results[0].geometry.location;
+    // Geocode the user input
+    serviceGeocoder.geocode({ address: value }, function (results, status) {
+      if (status !== "OK" || !results || !results[0]) {
+        resultBox.innerHTML = "<span class='text-red-600'>Location not found. Please try again.</span>";
+        return;
+      }
 
-        // Step 2: Calculate driving distance
-        const distanceUrl = 
-          `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${serviceCenter.lat},${serviceCenter.lng}&destinations=${userLocation.lat},${userLocation.lng}&key=${apiKey}`;
+      const destLocation = results[0].geometry.location;
 
-        fetch(distanceUrl)
-          .then(response => response.json())
-          .then(distanceData => {
-            const element = distanceData.rows?.[0]?.elements?.[0];
+      // Compute straight-line distance using the geometry library
+      const origin = new google.maps.LatLng(serviceCenterLatLng.lat, serviceCenterLatLng.lng);
+      const distanceMeters = google.maps.geometry.spherical.computeDistanceBetween(origin, destLocation);
+      const miles = distanceMeters / 1609.34;
 
-            if (!element || !element.distance) {
-              resultBox.innerHTML = "<span class='text-red-600'>Unable to calculate distance.</span>";
-              return;
-            }
-
-            const miles = element.distance.value / 1609.34;
-
-            if (miles <= maxDistanceMiles) {
-              resultBox.innerHTML = `
-                <span class='text-green-700'>
-                  Yes! You're inside our service area (${miles.toFixed(1)} miles away).
-                </span><br>
-                <a href="#contact" class="text-lavenderDark underline font-semibold">Contact Us Now →</a>
-              `;
-            } else {
-              resultBox.innerHTML = `
-                <span class='text-yellow-700'>
-                  You may be slightly outside our typical range (${miles.toFixed(1)} miles),
-                  but we may still assist depending on your needs.
-                </span><br>
-                <a href="#contact" class="text-lavenderDark underline font-semibold">Contact Us →</a>
-              `;
-            }
-          });
-      })
-      .catch(() => {
-        resultBox.innerHTML = "<span class='text-red-600'>An error occurred. Please try again.</span>";
-      });
+      // If you want to approximate "1 hour drive", you can treat 50 miles as your threshold
+      if (miles <= maxDistanceMiles) {
+        resultBox.innerHTML = `
+          <span class="text-green-700">
+            Yes! You are inside our service area (~${miles.toFixed(1)} miles from Minneapolis).
+          </span><br>
+          <a href="#contact" class="text-lavenderDark underline font-semibold">
+            Contact Us Now →
+          </a>
+        `;
+      } else {
+        resultBox.innerHTML = `
+          <span class="text-yellow-700">
+            You may be slightly outside our typical range (~${miles.toFixed(1)} miles),
+            but we may still be able to help depending on your situation.
+          </span><br>
+          <a href="#contact" class="text-lavenderDark underline font-semibold">
+            Contact Us to Discuss Options →
+          </a>
+        `;
+      }
+    });
   }
 </script>
+
+<!-- Load the Maps JavaScript API with the geometry library and our callback -->
+<script
+  async
+  defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzUh-bzYYwy-0MK1ooy8mNBw3jdRC5XZ4&libraries=geometry&callback=initServiceAreaChecker">
+</script>
+
 
 
 <!-- CONTACT -->
