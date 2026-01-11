@@ -152,7 +152,11 @@
       <a href="#why" class="hover:text-lavender">Why Choose Us</a>
       <a href="#mission" class="hover:text-lavender">Mission</a>
       <a href="#resources" class="hover:text-lavender">Resources</a>
-      <a href="#contact" class="hover:text-lavender">Contact</a>
+      <a id="contactMenuBtn"
+         href="#contact"
+         class="inline-flex items-center justify-center rounded-lg bg-lavenderDark px-4 py-2 text-white shadow-sm transition hover:bg-lavender">
+        Contact Us
+      </a>
     </nav>
   </div>
 </header>
@@ -160,11 +164,25 @@
 <script>
   const btn = document.getElementById("menuBtn");
   const menu = document.getElementById("mobileMenu");
+  const contactMenuBtn = document.getElementById("contactMenuBtn");
+
+  const closeMenu = () => {
+    if (menu.classList.contains("hidden")) {
+      return;
+    }
+    menu.classList.add("hidden");
+    menu.classList.add("opacity-0");
+    menu.classList.remove("opacity-100");
+  };
 
   btn.addEventListener("click", () => {
     menu.classList.toggle("hidden");
     menu.classList.toggle("opacity-0");
     menu.classList.toggle("opacity-100");
+  });
+
+  contactMenuBtn.addEventListener("click", () => {
+    closeMenu();
   });
 </script>
 
