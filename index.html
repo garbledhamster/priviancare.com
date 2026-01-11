@@ -719,7 +719,7 @@
 <!-- FAQ Drawer -->
 <button
   id="faq-drawer-button"
-  class="fixed bottom-6 right-6 z-[70] bg-red-800 text-[#ffcd54] font-black uppercase text-sm sm:text-base px-4 py-3 rounded-full shadow-lg border-2 border-[#ffcd54] hover:bg-red-900 transition"
+  class="fixed bottom-6 right-6 z-[70] bg-lavenderDark text-white font-sans font-semibold uppercase text-sm sm:text-base tracking-wide px-5 py-3 rounded-full shadow-lg border-2 border-white hover:bg-lavender hover:text-white transition"
   aria-expanded="false"
   aria-controls="faq-drawer"
   type="button"
@@ -729,22 +729,22 @@
 <div id="faq-drawer-overlay" class="fixed inset-0 bg-black/40 z-[60] hidden"></div>
 <aside
   id="faq-drawer"
-  class="fixed top-0 right-0 h-full w-full sm:w-[420px] max-w-[90vw] bg-[#ffcd54]/95 border-l-4 border-red-800 z-[70] transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col"
+  class="fixed top-0 right-0 h-full w-full sm:w-[420px] max-w-[90vw] bg-white border-l-4 border-lavenderDark z-[70] transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col"
   aria-hidden="true"
 >
-  <div class="flex items-center justify-between px-6 py-4 border-b-4 border-red-800 bg-red-800 text-[#ffcd54]">
-    <h2 class="text-xl sm:text-2xl font-black uppercase">FAQs</h2>
-    <button id="faq-drawer-close" class="text-2xl font-bold leading-none hover:text-white" type="button" aria-label="Close FAQ drawer">
+  <div class="flex items-center justify-between px-6 py-4 border-b-4 border-lavenderDark bg-lavenderDark text-white">
+    <h2 class="text-xl sm:text-2xl font-semibold uppercase tracking-wide">FAQs</h2>
+    <button id="faq-drawer-close" class="text-2xl font-bold leading-none hover:text-lavender" type="button" aria-label="Close FAQ drawer">
       &times;
     </button>
   </div>
   <div class="flex-1 overflow-y-auto px-6 py-6 space-y-4 text-left">
-    <div class="border-4 border-red-800 rounded-lg p-4 bg-[#ffcd54]">
-      <button class="w-full flex items-center justify-between text-left text-xl sm:text-lg font-bold text-red-800" data-faq-toggle aria-expanded="false" aria-controls="faq-panel-1">
+    <div class="border-2 border-lavenderDark rounded-lg p-4 bg-white shadow-sm">
+      <button class="w-full flex items-center justify-between text-left text-xl sm:text-lg font-semibold text-lavenderDark" data-faq-toggle aria-expanded="false" aria-controls="faq-panel-1">
         <span>1. What does RN-led care management include?</span>
-        <span class="text-2xl leading-none">+</span>
+        <span class="text-2xl leading-none text-lavenderDark">+</span>
       </button>
-      <div id="faq-panel-1" class="mt-4 text-red-800 text-lg sm:text-base hidden" data-faq-panel>
+      <div id="faq-panel-1" class="mt-4 text-lavenderDark text-lg sm:text-base hidden" data-faq-panel>
         <p>Our registered nurse provides ongoing clinical oversight, wellness check-ins, and advocacy so families never have to navigate care alone.</p>
         <ul class="list-disc pl-6">
           <li>Monthly health and safety check-ins</li>
@@ -754,12 +754,12 @@
       </div>
     </div>
 
-    <div class="border-4 border-red-800 rounded-lg p-4 bg-[#ffcd54]">
-      <button class="w-full flex items-center justify-between text-left text-xl sm:text-lg font-bold text-red-800" data-faq-toggle aria-expanded="false" aria-controls="faq-panel-2">
+    <div class="border-2 border-lavenderDark rounded-lg p-4 bg-white shadow-sm">
+      <button class="w-full flex items-center justify-between text-left text-xl sm:text-lg font-semibold text-lavenderDark" data-faq-toggle aria-expanded="false" aria-controls="faq-panel-2">
         <span>2. Do you offer help beyond nursing services?</span>
-        <span class="text-2xl leading-none">+</span>
+        <span class="text-2xl leading-none text-lavenderDark">+</span>
       </button>
-      <div id="faq-panel-2" class="mt-4 text-red-800 text-lg sm:text-base hidden" data-faq-panel>
+      <div id="faq-panel-2" class="mt-4 text-lavenderDark text-lg sm:text-base hidden" data-faq-panel>
         <p>Yes. Our concierge support team assists with everyday needs so seniors can stay safe and independent at home.</p>
         <ul class="list-disc pl-6">
           <li>Errands, grocery shopping, and meal prep</li>
@@ -769,23 +769,23 @@
       </div>
     </div>
 
-    <div class="border-4 border-red-800 rounded-lg p-4 bg-[#ffcd54]">
-      <button class="w-full flex items-center justify-between text-left text-xl sm:text-lg font-bold text-red-800" data-faq-toggle aria-expanded="false" aria-controls="faq-panel-3">
+    <div class="border-2 border-lavenderDark rounded-lg p-4 bg-white shadow-sm">
+      <button class="w-full flex items-center justify-between text-left text-xl sm:text-lg font-semibold text-lavenderDark" data-faq-toggle aria-expanded="false" aria-controls="faq-panel-3">
         <span>3. What areas do you serve?</span>
-        <span class="text-2xl leading-none">+</span>
+        <span class="text-2xl leading-none text-lavenderDark">+</span>
       </button>
-      <div id="faq-panel-3" class="mt-4 text-red-800 text-lg sm:text-base hidden" data-faq-panel>
+      <div id="faq-panel-3" class="mt-4 text-lavenderDark text-lg sm:text-base hidden" data-faq-panel>
         <p>We serve Minneapolis, Saint Paul, and surrounding Twin Cities communities, typically within about an hour of Minneapolis.</p>
         <p class="mt-2">If you're unsure, use the service area checker or contact us to confirm availability.</p>
       </div>
     </div>
 
-    <div class="border-4 border-red-800 rounded-lg p-4 bg-[#ffcd54]">
-      <button class="w-full flex items-center justify-between text-left text-xl sm:text-lg font-bold text-red-800" data-faq-toggle aria-expanded="false" aria-controls="faq-panel-4">
+    <div class="border-2 border-lavenderDark rounded-lg p-4 bg-white shadow-sm">
+      <button class="w-full flex items-center justify-between text-left text-xl sm:text-lg font-semibold text-lavenderDark" data-faq-toggle aria-expanded="false" aria-controls="faq-panel-4">
         <span>4. How do we get started and what does it cost?</span>
-        <span class="text-2xl leading-none">+</span>
+        <span class="text-2xl leading-none text-lavenderDark">+</span>
       </button>
-      <div id="faq-panel-4" class="mt-4 text-red-800 text-lg sm:text-base hidden" data-faq-panel>
+      <div id="faq-panel-4" class="mt-4 text-lavenderDark text-lg sm:text-base hidden" data-faq-panel>
         <p>Start by scheduling a call so we can understand your needs and recommend the right plan. We offer flexible membership and hourly options with transparent pricing.</p>
         <p class="mt-2">Monthly wellness check-in visits are available at a flat rate of $150 per visit.</p>
       </div>
