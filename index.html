@@ -76,6 +76,14 @@
     body.faq-drawer-open {
       overflow: hidden;
     }
+
+    .hero-background {
+      background-image: url("https://images.pexels.com/photos/339620/pexels-photo-339620.jpeg");
+    }
+
+    .location-map {
+      border: 0;
+    }
   </style>
 
   <!-- Improved LocalBusiness Schema -->
@@ -161,7 +169,7 @@
     </nav>
 
     <!-- Mobile Button -->
-    <button id="menuBtn" class="md:hidden focus:outline-none" type="button" aria-label="Open navigation menu">
+    <button id="menuBtn" class="md:hidden focus:outline-none" type="button" aria-label="Open navigation menu" aria-controls="mobileMenu" aria-expanded="false">
       <span class="sr-only">Open navigation menu</span>
       <svg class="w-8 h-8 text-lavenderDark" xmlns="http://www.w3.org/2000/svg"
            fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
@@ -226,12 +234,14 @@
     menu.classList.add("hidden");
     menu.classList.add("opacity-0");
     menu.classList.remove("opacity-100");
+    btn.setAttribute("aria-expanded", "false");
   };
 
   btn.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
+    const isHidden = menu.classList.toggle("hidden");
     menu.classList.toggle("opacity-0");
     menu.classList.toggle("opacity-100");
+    btn.setAttribute("aria-expanded", (!isHidden).toString());
   });
 
   contactMenuBtn.addEventListener("click", () => {
@@ -240,8 +250,7 @@
 </script>
 
 <!-- HERO -->
-<section class="relative h-[75vh] flex items-center bg-cover bg-center"
-         style="background-image: url('https://images.pexels.com/photos/339620/pexels-photo-339620.jpeg');">
+<section class="hero-background relative h-[75vh] flex items-center bg-cover bg-center">
 
   <!-- Overlay -->
   <div class="absolute inset-0 bg-lavenderDark/40"></div>
@@ -615,7 +624,7 @@
 
     <!-- MAP -->
     <div class="mt-10 w-full h-96 rounded-xl overflow-hidden shadow-lg">
-      <iframe width="100%" height="100%" style="border:0"
+      <iframe class="location-map" width="100%" height="100%"
               loading="lazy" allowfullscreen title="Service area map"
               src="https://www.google.com/maps/embed/v1/view?key=AIzaSyDzUh-bzYYwy-0MK1ooy8mNBw3jdRC5XZ4&center=44.9778,-93.2650&zoom=9">
       </iframe>
